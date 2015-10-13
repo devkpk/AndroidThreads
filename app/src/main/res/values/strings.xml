@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AndroidThreads</string>
+    <string name="counter_start">10</string>
+    <string name="start_label">Start</string>
+</resources>
