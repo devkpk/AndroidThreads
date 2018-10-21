@@ -26,18 +26,18 @@ public class MainActivity extends Activity {
 
                 timerTextView.setText(String.valueOf(countdownTimer));
 
-                new TimerAsyncTask().execute();
+                new TimerAsyncTask().execute(countdownTimer);
             }
         });
     }
 
-    private class TimerAsyncTask extends AsyncTask<Void, Integer, Void> {
+    private class TimerAsyncTask extends AsyncTask<Integer, Integer, Void> {
 
         // The action that should be performed in the worker thread. In this case our intermittent
         // countdown.
         @Override
-        protected Void doInBackground(Void... params) {
-            for (int i = 10; i >= 0; i--){
+        protected Void doInBackground(Integer... params) {
+            for (int i = params[0]; i >= 0; i--){
 
                 // Invokes onProgressUpdate(...)
                 publishProgress(i);
